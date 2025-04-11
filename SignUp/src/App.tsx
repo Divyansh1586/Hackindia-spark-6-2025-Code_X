@@ -16,10 +16,7 @@ function App() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
     console.log('Login attempt with:', { email, password });
     setIsLoading(false);
   };
