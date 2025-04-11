@@ -3,6 +3,12 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, HttpUrl
 from typing import List
 import os
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # defaults to .env in current directory
+
+
 import socket
 import urllib3
 from PyPDF2 import PdfReader
@@ -24,8 +30,11 @@ urllib3.util.timeout.Timeout.DEFAULT_TIMEOUT = 120
 # Init DB
 Base.metadata.create_all(bind=engine)
 
-# API Key (for Gemini)
-os.environ["GOOGLE_API_KEY"] = "AIzaSyDGs1BYvkVZxB85Ul5O0hPEK2g3lnvm5DU"
+
+api_key = os.getenv("GOOGLE_API_KEY")  # returns None if not set
+# or with a default fallback
+
+
 
 # FastAPI app
 app = FastAPI(title="Document AI Assistant", description="Process PDFs, URLs, Query, and Summarize")
