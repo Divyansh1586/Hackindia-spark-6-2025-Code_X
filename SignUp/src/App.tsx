@@ -45,7 +45,7 @@ function App() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                  <Label htmlFor="email" className="text-sm font-medium text-gray-700 text-left">
                     Email Address
                   </Label>
                   <div className="relative">
@@ -63,7 +63,7 @@ function App() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+                  <Label htmlFor="password" className="text-sm font-medium text-gray-700 text-left">
                     Password
                   </Label>
                   <div className="relative">
@@ -91,10 +91,10 @@ function App() {
                   </div>
                 </div>
 
-                <div className="flex justify-end">
+                <div className="flex justify-end p-4">
                   <Button
                     variant="link"
-                    className="text-sm text-gray-600 hover:text-black p-0"
+                    className="text-white text-sm hover:text-white p-2"
                   >
                     Forgot password?
                   </Button>
@@ -126,9 +126,9 @@ function App() {
               Don't have an account?{" "}
               <Button
                 variant="link"
-                className="text-black hover:text-gray-800 p-0"
+                className="text-white hover:text-white p-2"
               >
-                Create one now
+                Create One
               </Button>
             </p>
           </CardFooter>
