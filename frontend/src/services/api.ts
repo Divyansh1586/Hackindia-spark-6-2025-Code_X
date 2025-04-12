@@ -133,7 +133,7 @@ class ApiService {
       data.session_id = sessionId;
     }
     return this.request<{ session_id: string; message: string }>(
-      "/process-url",
+      "/process-urls",
       "POST",
       data
     );

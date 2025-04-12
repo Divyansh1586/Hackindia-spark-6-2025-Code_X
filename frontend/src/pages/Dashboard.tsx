@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { UploadSection } from "@/components/UploadSection";
 import { ChatInterface } from "@/components/ChatInterface";
 import { SessionList } from "@/components/SessionList";
-import { DocumentSummary } from "@/components/DocumentSummary";
+//import { DocumentSummary } from "@/components/DocumentSummary";
 
 const Dashboard = () => {
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null);
@@ -39,7 +39,7 @@ const Dashboard = () => {
             {currentSessionId ? (
               <>
                 <ChatInterface sessionId={currentSessionId} />
-                <DocumentSummary sessionId={currentSessionId} />
+                {/* <DocumentSummary sessionId={currentSessionId} /> */}
               </>
             ) : (
               <div className="text-muted-foreground text-center mt-10">
