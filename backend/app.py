@@ -185,7 +185,19 @@ def load_session(session_id: str, user: User = Depends(get_current_user)):
 def my_sessions(user: User = Depends(get_current_user)):
     db: Session = SessionLocal()
     sessions = db.query(SessionData).filter_by(user_id=user.id).all()
-    return [{"session_id": s.session_id, "type": s.content_type} for s in sessions]
+    return {
+        "sessions": [
+            {
+                "session_id": s.session_id,
+                "type": s.content_type,
+                "created_at": s.created_at.isoformat(),  # or str(s.created_at)
+                "title": s.title,
+                "status": s.status,
+            }
+            for s in sessions
+        ]
+    }
+
 
 if __name__ == "__main__":
     import uvicorn
